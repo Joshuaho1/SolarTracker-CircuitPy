@@ -152,7 +152,7 @@ class PID(object):
                 self.integral = intlimMin
 
         # Derivative
-        self.derivative = (2.0 * self.Kd * (measurement - self.prev_measure)) + (2.0 * self.tau - self.T) * (self.derivative) / (2.0 * self.tau + self.T) 
+        self.derivative = (2.0 * self.Kd * (measurement - self.prev_measure) + (2.0 * self.tau - self.T) * self.derivative) / (2.0 * self.tau + self.T) 
         
         # Output
         self.out = proportional + self.integral + self.derivative
