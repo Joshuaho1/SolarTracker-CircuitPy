@@ -117,8 +117,8 @@ class PID(object):
         self.out = 0
 
         # Anti windup, Integrator clamp, Output clamp
-        self.antiwindup = 0
-        self.integratorclamp = 0
+        self.antiwindup = 1
+        self.integratorclamp = 1
         self.outputclamp = outputclamp
 
     def update(self, setpoint, measurement):
